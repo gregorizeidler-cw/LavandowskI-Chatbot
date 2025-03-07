@@ -52,7 +52,18 @@ tables = {
     "offense_analysis": "infinitepay-production.metrics_amlft.lavandowski_offense_analysis_data",
     "phonecast": "infinitepay-production.metrics_amlft.lavandowski_phonecast_data",
     "user_device": "metrics_amlft.user_device",
-    "cardholder_report": "metrics_amlft.cardholder_report"
+    "cardholder_report": "metrics_amlft.cardholder_report",
+    "online_store_data": "infinitepay-production.metrics_amlft.lavandowski_online_store_data",
+    "cardholder_concentration": "metrics_amlft.cardholder_concentration",
+    "issuing_concentration": "metrics_amlft.issuing_concentration",
+    "bank_slips_alert": "metrics_amlft.bank_slips_alert",
+    "gafi_alert": "metrics_amlft.gafi_alert",
+    "government_corporate_cards": "metrics_amlft.government_corporate_cards",
+    "international_cards": "metrics_amlft.international_cards",
+    "betting_houses_alert": "metrics_amlft.betting_houses_alert",
+    "ch_alert": "metrics_amlft.ch_alert",
+    "pep_pix_alert": "metrics_amlft.pep_pix_alert",
+    "issuing_transactions": "metrics_amlft.issuing_transactions"
 }
 
 # Possíveis colunas de identificação do usuário nas tabelas
@@ -61,10 +72,10 @@ user_columns = ["user_id", "customer_id", "client_id", "debit_party", "merchant_
 def fetch_user_data(user_id: int) -> pd.DataFrame:
     """
     Busca os dados do usuário em todas as tabelas relevantes.
-
+    
     Args:
         user_id (int): ID do usuário a ser consultado.
-
+    
     Returns:
         pd.DataFrame: Dados combinados de todas as tabelas.
     """
@@ -82,17 +93,23 @@ def fetch_user_data(user_id: int) -> pd.DataFrame:
             user_column = next((col for col in user_columns if col in available_columns), None)
 
             if not user_column:
-                print(f"⚠️ A tabela {table} NÃO contém colunas identificáveis para busca de usuário.")
+                logging.warning(f"⚠️ A tabela {table} NÃO contém colunas identificáveis para busca de usuário.")
                 continue
 
             # Executa a consulta com a coluna correta
-            query = f"SELECT * FROM `{table}` WHERE {user_column} = {user_id} LIMIT 10"
+            query = f"SELECT * FROM `{table}` WHERE {user_column} = {user_id} LIMIT 100"
             df = execute_query(query)
             if not df.empty:
                 df["source_table"] = table  # Indica a origem dos dados
                 combined_data.append(df)
 
         except Exception as e:
-            print(f"❌ Erro ao buscar dados na tabela {table}: {e}")
+            logging.error(f"❌ Erro ao buscar dados na tabela {table}: {e}")
 
     return pd.concat(combined_data, ignore_index=True) if combined_data else pd.DataFrame()
+
+# Exemplo de uso
+if __name__ == "__main__":
+    user_id = 123456789  # Substituir por um ID real
+    user_data = fetch_user_data(user_id)
+    print(user_data)
