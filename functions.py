@@ -63,7 +63,9 @@ tables = {
     "betting_houses_alert": "metrics_amlft.betting_houses_alert",
     "ch_alert": "metrics_amlft.ch_alert",
     "pep_pix_alert": "metrics_amlft.pep_pix_alert",
-    "issuing_transactions": "metrics_amlft.issuing_transactions"
+    "issuing_transactions": "metrics_amlft.issuing_transactions",
+    # --- ADIÇÃO: Tabela de Bets PIX Transfers ---
+    "bets_pix_transfers": "infinitepay-production.metrics_amlft.bets_pix_transfers"
 }
 
 # Possíveis colunas de identificação do usuário nas tabelas
@@ -82,7 +84,7 @@ def fetch_user_data(user_id: int) -> pd.DataFrame:
     combined_data = []
     for label, table in tables.items():
         try:
-            # Identifica a coluna correta
+            # Identifica a coluna correta para busca na tabela
             column_check_query = f"""
             SELECT column_name FROM `{table[:-table[::-1].index(".") - 1]}.INFORMATION_SCHEMA.COLUMNS`
             WHERE table_name = '{table.split(".")[-1]}'
@@ -96,7 +98,7 @@ def fetch_user_data(user_id: int) -> pd.DataFrame:
                 logging.warning(f"⚠️ A tabela {table} NÃO contém colunas identificáveis para busca de usuário.")
                 continue
 
-            # Executa a consulta com a coluna correta
+            # Executa a consulta com a coluna identificada
             query = f"SELECT * FROM `{table}` WHERE {user_column} = {user_id} LIMIT 100"
             df = execute_query(query)
             if not df.empty:
