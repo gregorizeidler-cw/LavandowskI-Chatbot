@@ -704,25 +704,488 @@ This advanced pipeline combines multiple AI techniques for maximum detection acc
 - **🔄 Federated Learning**: Share threat intelligence across institutions while preserving privacy
 - **📊 Advanced Feature Engineering**: Extract sophisticated temporal, behavioral, and network features
 
+```mermaid
+graph TB
+    subgraph "🤖 Enhanced AI Pipeline"
+        subgraph "📊 Data Preprocessing"
+            FEATURES[Feature Engineering<br/>• Time-series features<br/>• Graph features<br/>• Behavioral embeddings]
+            AUGMENT[Data Augmentation<br/>• Synthetic transactions<br/>• SMOTE for rare cases<br/>• Privacy-preserving generation]
+        end
+        
+        subgraph "🧠 ML Models"
+            ENSEMBLE[Ensemble Models<br/>• XGBoost<br/>• Random Forest<br/>• Deep Learning]
+            GRAPH[Graph Neural Networks<br/>• Transaction networks<br/>• Entity relationships<br/>• Suspicious clusters]
+            ANOMALY[Anomaly Detection<br/>• Isolation Forest<br/>• One-Class SVM<br/>• Autoencoders]
+            TIME[Time Series Models<br/>• LSTM/GRU<br/>• Prophet<br/>• Seasonal patterns]
+        end
+        
+        subgraph "🎯 Advanced Techniques"
+            ACTIVE[Active Learning<br/>• Uncertainty sampling<br/>• Query by committee<br/>• Human feedback loop]
+            FEDERATED[Federated Learning<br/>• Multi-bank training<br/>• Privacy preservation<br/>• Shared intelligence]
+            EXPLAINABLE[Enhanced XAI<br/>• SHAP values<br/>• LIME explanations<br/>• Counterfactuals]
+        end
+        
+        subgraph "🔄 Continuous Learning"
+            DRIFT[Concept Drift Detection<br/>• Statistical tests<br/>• Performance monitoring<br/>• Automated retraining]
+            ONLINE[Online Learning<br/>• Incremental updates<br/>• Real-time adaptation<br/>• A/B testing]
+        end
+    end
+    
+    FEATURES --> ENSEMBLE
+    FEATURES --> GRAPH
+    FEATURES --> ANOMALY
+    FEATURES --> TIME
+    
+    ENSEMBLE --> ACTIVE
+    GRAPH --> FEDERATED
+    ANOMALY --> EXPLAINABLE
+    
+    ACTIVE --> DRIFT
+    FEDERATED --> ONLINE
+    EXPLAINABLE --> ONLINE
+    
+    style GRAPH fill:#ff6b6b
+    style FEDERATED fill:#4ecdc4
+    style EXPLAINABLE fill:#45b7d1
+    style ONLINE fill:#96ceb4
+```
+
 ### **🕸️ Graph Neural Network Architecture**
 
 Our GNN implementation focuses on community detection and network analysis for money laundering patterns:
+
+```mermaid
+graph TB
+    subgraph "📊 Transaction Analysis"
+        TX1[Transaction $9,500]
+        TX2[Transaction $9,200]
+        TX3[Transaction $9,800]
+        TX4[Transaction $9,100]
+        CURRENT[Current Transaction $9,700]
+    end
+    
+    subgraph "⏰ Time Window Analysis"
+        WINDOW[24-Hour Window Check]
+        COUNT[Transaction Count: 5]
+        TIMING[Regular Intervals: 2-3 hours]
+        THRESHOLD[All Below $10K CTR Threshold]
+    end
+    
+    subgraph "🔍 Pattern Detection"
+        UNIFORM[Uniform Amount Analysis]
+        DEVIATION[Standard Deviation: $284]
+        SEQUENCE[Sequential Pattern Check]
+        VELOCITY[Transaction Velocity Check]
+    end
+    
+    subgraph "🚨 Risk Indicators"
+        CLASSIC[Classic Structuring Pattern]
+        MICRO[Micro-Structuring Pattern]
+        VELOCITY_HIGH[High Velocity Pattern]
+        TIMING_REG[Regular Timing Pattern]
+    end
+    
+    subgraph "⚖️ Risk Scoring"
+        BASE_SCORE[Base Structure Score: +20]
+        VELOCITY_SCORE[Velocity Multiplier: +15]
+        UNIFORM_SCORE[Uniform Amount: +10]
+        TIMING_SCORE[Regular Timing: +10]
+        TOTAL_SCORE[Total Risk Score: 55]
+    end
+    
+    subgraph "🎯 Decision Logic"
+        THRESHOLD_CHECK{Risk ≥ 45?}
+        ALERT[Generate Alert]
+        ESCALATE[Escalate to Review]
+        MONITOR[Enhanced Monitoring]
+    end
+    
+    TX1 --> WINDOW
+    TX2 --> WINDOW
+    TX3 --> WINDOW
+    TX4 --> WINDOW
+    CURRENT --> WINDOW
+    
+    WINDOW --> COUNT
+    COUNT --> TIMING
+    TIMING --> THRESHOLD
+    
+    COUNT --> UNIFORM
+    UNIFORM --> DEVIATION
+    DEVIATION --> SEQUENCE
+    SEQUENCE --> VELOCITY
+    
+    THRESHOLD --> CLASSIC
+    VELOCITY --> VELOCITY_HIGH
+    DEVIATION --> MICRO
+    TIMING --> TIMING_REG
+    
+    CLASSIC --> BASE_SCORE
+    VELOCITY_HIGH --> VELOCITY_SCORE
+    MICRO --> UNIFORM_SCORE
+    TIMING_REG --> TIMING_SCORE
+    
+    BASE_SCORE --> TOTAL_SCORE
+    VELOCITY_SCORE --> TOTAL_SCORE
+    UNIFORM_SCORE --> TOTAL_SCORE
+    TIMING_SCORE --> TOTAL_SCORE
+    
+    TOTAL_SCORE --> THRESHOLD_CHECK
+    THRESHOLD_CHECK -->|Yes| ALERT
+    THRESHOLD_CHECK -->|No| MONITOR
+    ALERT --> ESCALATE
+    
+    style CLASSIC fill:#ff5252
+    style TOTAL_SCORE fill:#ffc107
+    style ALERT fill:#ff5252
+    style THRESHOLD_CHECK fill:#2196f3
+```
+
+### **📄 Trade-Based Money Laundering Detection**
+
+Advanced document analysis and pattern recognition for trade-based laundering schemes:
+
+```mermaid
+graph LR
+    subgraph "📋 Document Inputs"
+        INVOICE[Commercial Invoice<br/>$500K for 1000 units silk]
+        SHIPPING[Shipping Manifest<br/>1000 units silk]
+        CUSTOMS[Customs Declaration<br/>Value: $300K]
+        CONTRACT[Trade Contract<br/>Market price analysis]
+    end
+    
+    subgraph "🔍 AI Document Analysis"
+        OCR[Document OCR<br/>Text Extraction]
+        NLP[NLP Processing<br/>Entity Recognition]
+        LLM[LLM Analysis<br/>Contextual Understanding]
+        PATTERN[Pattern Matching<br/>Risk Indicators]
+    end
+    
+    subgraph "⚠️ Discrepancy Detection"
+        PRICE[Price Analysis<br/>Invoice vs Market]
+        QUANTITY[Quantity Verification<br/>Invoice vs Shipping]
+        VALUE[Value Comparison<br/>Invoice vs Customs]
+        QUALITY[Quality Assessment<br/>Goods Description]
+    end
+    
+    subgraph "🚨 TBML Risk Indicators"
+        OVER[Over-Invoicing<br/>66% price inflation]
+        UNDER[Under-Invoicing<br/>Customs undervaluation]
+        PHANTOM[Phantom Shipment<br/>No actual goods]
+        MISMATCH[Document Mismatch<br/>Inconsistent details]
+    end
+    
+    subgraph "🎯 Risk Assessment"
+        SCORE[TBML Risk Score]
+        CLASSIFICATION[Risk Classification]
+        RECOMMENDATION[Action Recommendation]
+        ALERT[Generate Alert]
+    end
+    
+    subgraph "👤 Investigation Queue"
+        ANALYST[Trade Analyst Review]
+        VERIFICATION[Source Verification]
+        ESCALATION[Regulatory Escalation]
+        SAR[SAR Filing]
+    end
+    
+    INVOICE --> OCR
+    SHIPPING --> OCR
+    CUSTOMS --> OCR
+    CONTRACT --> OCR
+    
+    OCR --> NLP
+    NLP --> LLM
+    LLM --> PATTERN
+    
+    PATTERN --> PRICE
+    PATTERN --> QUANTITY
+    PATTERN --> VALUE
+    PATTERN --> QUALITY
+    
+    PRICE --> OVER
+    VALUE --> UNDER
+    QUANTITY --> PHANTOM
+    QUALITY --> MISMATCH
+    
+    OVER --> SCORE
+    UNDER --> SCORE
+    PHANTOM --> SCORE
+    MISMATCH --> SCORE
+    
+    SCORE --> CLASSIFICATION
+    CLASSIFICATION --> RECOMMENDATION
+    RECOMMENDATION --> ALERT
+    
+    ALERT --> ANALYST
+    ANALYST --> VERIFICATION
+    VERIFICATION --> ESCALATION
+    ESCALATION --> SAR
+    
+    style OVER fill:#ff5252
+    style UNDER fill:#ff9800
+    style PHANTOM fill:#f44336
+    style SCORE fill:#4caf50
+    style SAR fill:#ff1744
+```
 
 ### **📊 Advanced Analytics & Business Intelligence Suite**
 
 Comprehensive analytics platform providing real-time insights, predictive analytics, and strategic business intelligence:
 
+```mermaid
+graph LR
+    subgraph "📊 Advanced Analytics Suite"
+        subgraph "🎯 Real-time Dashboards"
+            EXEC[Executive Dashboard<br/>• Risk KPIs<br/>• ROI metrics<br/>• Compliance status]
+            OPS[Operations Center<br/>• Live alerts<br/>• Queue management<br/>• Performance metrics]
+            ANALYST[Analyst Workbench<br/>• Case management<br/>• Investigation tools<br/>• Evidence collection]
+        end
+        
+        subgraph "📈 Predictive Analytics"
+            FORECAST[Risk Forecasting<br/>• Volume prediction<br/>• Seasonal patterns<br/>• Regulatory changes]
+            NETWORK[Network Analysis<br/>• Entity relationships<br/>• Community detection<br/>• Risk propagation]
+            BEHAVIORAL[Behavioral Profiling<br/>• Customer clustering<br/>• Deviation detection<br/>• Lifecycle analysis]
+        end
+        
+        subgraph "🧪 A/B Testing Platform"
+            EXPERIMENTS[Model Experiments<br/>• Champion/Challenger<br/>• Performance comparison<br/>• Statistical significance]
+            ROLLOUT[Gradual Rollout<br/>• Canary deployment<br/>• Risk mitigation<br/>• Rollback capability]
+        end
+        
+        subgraph "📋 Regulatory Reporting"
+            AUTO_SAR[Automated SAR Generation<br/>• Template-based<br/>• Regulatory compliance<br/>• Multi-jurisdiction]
+            AUDIT[Audit Trail Analytics<br/>• Decision tracking<br/>• Model explanations<br/>• Compliance verification]
+        end
+    end
+    
+    EXEC --> FORECAST
+    OPS --> NETWORK
+    ANALYST --> BEHAVIORAL
+    
+    FORECAST --> EXPERIMENTS
+    NETWORK --> ROLLOUT
+    BEHAVIORAL --> AUTO_SAR
+    
+    EXPERIMENTS --> AUDIT
+    ROLLOUT --> AUDIT
+    AUTO_SAR --> AUDIT
+    
+    style NETWORK fill:#ff9999
+    style EXPERIMENTS fill:#99ccff
+    style AUTO_SAR fill:#99ff99
+    style AUDIT fill:#ffcc99
+```
+
 ### **👁️ 360° Observability & Monitoring Stack**
 
 Complete observability solution with intelligent alerting, distributed tracing, and anomaly detection:
+
+```mermaid
+graph TB
+    subgraph "👁️ Complete Observability Stack"
+        subgraph "📊 Metrics & Monitoring"
+            PROMETHEUS[Prometheus<br/>• Custom metrics<br/>• Alerting rules<br/>• Long-term storage]
+            GRAFANA[Grafana<br/>• Beautiful dashboards<br/>• Alerting<br/>• Annotations]
+            DATADOG[DataDog/New Relic<br/>• APM<br/>• Infrastructure<br/>• Synthetics]
+        end
+        
+        subgraph "📝 Logging & Tracing"
+            ELK[ELK Stack<br/>• Elasticsearch<br/>• Logstash<br/>• Kibana]
+            JAEGER[Jaeger<br/>• Distributed tracing<br/>• Performance analysis<br/>• Dependency mapping]
+            OPENTEL[OpenTelemetry<br/>• Vendor-agnostic<br/>• Auto-instrumentation<br/>• Unified observability]
+        end
+        
+        subgraph "🚨 Intelligent Alerting"
+            AIOPS[AIOps Platform<br/>• Anomaly detection<br/>• Alert correlation<br/>• Root cause analysis]
+            RUNBOOK[Automated Runbooks<br/>• Self-healing<br/>• Incident response<br/>• Escalation paths]
+            ONCALL[On-Call Management<br/>• PagerDuty integration<br/>• Schedule rotation<br/>• SLA tracking]
+        end
+        
+        subgraph "🎭 Chaos Engineering"
+            CHAOS[Chaos Monkey<br/>• Fault injection<br/>• Resilience testing<br/>• Failure scenarios]
+            LOAD[Load Testing<br/>• Performance testing<br/>• Capacity planning<br/>• Stress testing]
+        end
+    end
+    
+    PROMETHEUS --> AIOPS
+    GRAFANA --> RUNBOOK
+    DATADOG --> ONCALL
+    
+    ELK --> AIOPS
+    JAEGER --> CHAOS
+    OPENTEL --> LOAD
+    
+    AIOPS --> CHAOS
+    RUNBOOK --> LOAD
+    
+    style AIOPS fill:#ff5722
+    style OPENTEL fill:#2196f3
+    style CHAOS fill:#e91e63
+    style RUNBOOK fill:#4caf50
+```
 
 ### **🌍 Multi-Environment Deployment Architecture**
 
 Production-grade deployment architecture with multi-environment support and enterprise security:
 
+```mermaid
+graph TB
+    subgraph "🌍 Multi-Environment Deployment"
+        subgraph "🧪 Development Environment"
+            DEV_API[Development API<br/>Single Instance]
+            DEV_DB[Local DynamoDB<br/>Development Tables]
+            DEV_LLM[Mock LLM Service<br/>Offline Testing]
+        end
+        
+        subgraph "🔍 Staging Environment"
+            STAGE_ALB[Application Load Balancer]
+            STAGE_API[API Gateway<br/>Rate Limited]
+            STAGE_LAMBDA[Lambda Functions<br/>Limited Concurrency]
+            STAGE_DB[DynamoDB<br/>Staging Tables]
+            STAGE_BEDROCK[Bedrock Access<br/>Limited Quota]
+        end
+        
+        subgraph "🏭 Production Environment"
+            subgraph "🌐 Global Infrastructure"
+                PROD_CLOUDFRONT[CloudFront CDN<br/>Global Edge Locations]
+                PROD_ALB[Application Load Balancer<br/>Multi-AZ]
+                PROD_WAF[AWS WAF<br/>DDoS Protection]
+            end
+            
+            subgraph "⚡ Compute Layer"
+                PROD_API[API Gateway<br/>Production Scale]
+                PROD_LAMBDA[Lambda Functions<br/>Auto-Scaling]
+                PROD_FARGATE[Fargate Containers<br/>Long-Running Tasks]
+                PROD_STEP[Step Functions<br/>Complex Workflows]
+            end
+            
+            subgraph "💾 Data Layer"
+                PROD_DYNAMO[DynamoDB<br/>Global Tables]
+                PROD_S3[S3 Buckets<br/>Multi-Region]
+                PROD_REDIS[ElastiCache Redis<br/>Cluster Mode]
+                PROD_RDS[RDS Aurora<br/>Multi-AZ]
+            end
+            
+            subgraph "🤖 AI/ML Layer"
+                PROD_BEDROCK[Amazon Bedrock<br/>High Throughput]
+                PROD_COMPREHEND[Amazon Comprehend<br/>NLP Processing]
+                PROD_SAGEMAKER[SageMaker<br/>Custom Models]
+            end
+            
+            subgraph "📊 Monitoring Layer"
+                PROD_CLOUDWATCH[CloudWatch<br/>Metrics & Logs]
+                PROD_XRAY[X-Ray<br/>Distributed Tracing]
+                PROD_GRAFANA[Grafana Dashboard<br/>Custom Metrics]
+            end
+        end
+    end
+    
+    subgraph "🔄 CI/CD Pipeline"
+        GIT[Git Repository<br/>Source Code]
+        BUILD[CodeBuild<br/>Automated Testing]
+        DEPLOY[CodeDeploy<br/>Blue/Green Deployment]
+        TERRAFORM[Terraform<br/>Infrastructure as Code]
+    end
+    
+    subgraph "🔐 Security & Compliance"
+        VAULT[AWS Secrets Manager<br/>Credential Storage]
+        KMS[AWS KMS<br/>Encryption Keys]
+        CLOUDTRAIL[CloudTrail<br/>Audit Logging]
+        CONFIG[AWS Config<br/>Compliance Monitoring]
+    end
+    
+    GIT --> BUILD
+    BUILD --> DEPLOY
+    TERRAFORM --> STAGE_API
+    TERRAFORM --> PROD_API
+    
+    DEPLOY --> DEV_API
+    DEPLOY --> STAGE_LAMBDA
+    DEPLOY --> PROD_LAMBDA
+    
+    PROD_CLOUDFRONT --> PROD_ALB
+    PROD_ALB --> PROD_API
+    PROD_WAF --> PROD_ALB
+    
+    PROD_API --> PROD_LAMBDA
+    PROD_LAMBDA --> PROD_FARGATE
+    PROD_LAMBDA --> PROD_STEP
+    
+    PROD_LAMBDA --> PROD_DYNAMO
+    PROD_LAMBDA --> PROD_S3
+    PROD_LAMBDA --> PROD_REDIS
+    PROD_STEP --> PROD_RDS
+    
+    PROD_LAMBDA --> PROD_BEDROCK
+    PROD_LAMBDA --> PROD_COMPREHEND
+    PROD_STEP --> PROD_SAGEMAKER
+    
+    PROD_LAMBDA --> PROD_CLOUDWATCH
+    PROD_LAMBDA --> PROD_XRAY
+    PROD_CLOUDWATCH --> PROD_GRAFANA
+    
+    VAULT --> PROD_LAMBDA
+    KMS --> PROD_DYNAMO
+    CLOUDTRAIL --> PROD_CLOUDWATCH
+    CONFIG --> PROD_CLOUDWATCH
+    
+    style PROD_BEDROCK fill:#ff9999
+    style PROD_LAMBDA fill:#99ccff
+    style PROD_DYNAMO fill:#99ff99
+    style PROD_CLOUDWATCH fill:#ffcc99
+    style TERRAFORM fill:#e1bee7
+```
+
 ### **🏢 Enterprise Integration Hub**
 
 Comprehensive integration platform connecting with core banking systems, external data sources, and legacy infrastructure:
+
+```mermaid
+graph TB
+    subgraph "🏢 Enterprise Integration Hub"
+        subgraph "🏛️ Core Banking Systems"
+            CBS[Core Banking<br/>• Real-time transaction feeds<br/>• Customer data sync<br/>• Account information]
+            SWIFT[SWIFT Network<br/>• Cross-border payments<br/>• MT messages<br/>• Sanctions screening]
+            CARD[Card Networks<br/>• Visa/Mastercard<br/>• Real-time authorization<br/>• Merchant data]
+        end
+        
+        subgraph "📊 Data Sources"
+            EXTERNAL[External Data<br/>• Credit bureaus<br/>• KYC providers<br/>• Sanctions lists<br/>• PEP databases]
+            NEWS[News & Media<br/>• Adverse media<br/>• Social media<br/>• Public records]
+            BLOCKCHAIN[Blockchain APIs<br/>• Multiple chains<br/>• Wallet clustering<br/>• Exchange data]
+        end
+        
+        subgraph "🔗 API Gateway"
+            REST[REST APIs<br/>• RESTful endpoints<br/>• OpenAPI specs<br/>• Rate limiting]
+            GRAPHQL[GraphQL<br/>• Flexible queries<br/>• Real-time subscriptions<br/>• Schema federation]
+            WEBHOOK[Webhooks<br/>• Event-driven<br/>• Retry logic<br/>• Authentication]
+        end
+        
+        subgraph "🎭 Legacy Integration"
+            MAINFRAME[Mainframe<br/>• COBOL systems<br/>• Batch processing<br/>• File transfers]
+            ETL[ETL Pipelines<br/>• Data transformation<br/>• Scheduling<br/>• Error handling]
+            MESSAGE[Message Queues<br/>• IBM MQ<br/>• RabbitMQ<br/>• Apache ActiveMQ]
+        end
+    end
+    
+    CBS --> REST
+    SWIFT --> GRAPHQL
+    CARD --> WEBHOOK
+    
+    EXTERNAL --> REST
+    NEWS --> GRAPHQL
+    BLOCKCHAIN --> WEBHOOK
+    
+    REST --> MAINFRAME
+    GRAPHQL --> ETL
+    WEBHOOK --> MESSAGE
+    
+    style CBS fill:#e1f5fe
+    style BLOCKCHAIN fill:#ff9800
+    style REST fill:#4caf50
+    style MAINFRAME fill:#9c27b0
+```
 
 ---
 
