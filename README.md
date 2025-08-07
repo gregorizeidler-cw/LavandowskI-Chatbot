@@ -442,7 +442,7 @@ graph TB
     end
     
     subgraph "🧮 Risk Calculation"
-        FORMULA[Weighted Sum Algorithm<br/>Σ(Risk_Factor × Weight)]
+        FORMULA[Weighted Sum Algorithm<br/>Sum(Risk_Factor * Weight)]
         NORMALIZE[Score Normalization<br/>0-100 Scale]
         CONFIDENCE[Confidence Scoring<br/>Statistical Validation]
     end
@@ -455,9 +455,9 @@ graph TB
     end
     
     subgraph "🎯 Decision Logic"
-        AUTO_BLOCK{Score ≥ 85?}
-        HUMAN_REVIEW{Score ≥ 60?}
-        ENHANCED_MON{Score ≥ 30?}
+        AUTO_BLOCK{Score >= 85?}
+        HUMAN_REVIEW{Score >= 60?}
+        ENHANCED_MON{Score >= 30?}
         AUTO_APPROVE[Auto Approve]
     end
     
@@ -527,7 +527,7 @@ Advanced blockchain analysis capabilities for detecting cryptocurrency-based mon
 
 ```mermaid
 graph TB
-    subgraph "₿ Blockchain Data Sources"
+    subgraph "BTC Blockchain Data Sources"
         BITCOIN[Bitcoin Network<br/>Transaction Data]
         ETHEREUM[Ethereum Network<br/>Smart Contracts]
         ALTCOINS[Other Blockchains<br/>Litecoin, BCH, etc.]
@@ -535,10 +535,10 @@ graph TB
     end
     
     subgraph "🔍 Analysis Components"
-        WALLET[Wallet Analysis<br/>• Address clustering<br/>• Ownership attribution<br/>• Balance tracking]
-        CHAIN[Chain Analysis<br/>• Transaction tracing<br/>• Flow analysis<br/>• Path finding]
-        PATTERN[Pattern Detection<br/>• Mixing patterns<br/>• Layering schemes<br/>• Integration methods]
-        INTEL[Threat Intelligence<br/>• Known bad actors<br/>• Sanctioned addresses<br/>• Darknet markets]
+        WALLET[Wallet Analysis<br/>- Address clustering<br/>- Ownership attribution<br/>- Balance tracking]
+        CHAIN[Chain Analysis<br/>- Transaction tracing<br/>- Flow analysis<br/>- Path finding]
+        PATTERN[Pattern Detection<br/>- Mixing patterns<br/>- Layering schemes<br/>- Integration methods]
+        INTEL[Threat Intelligence<br/>- Known bad actors<br/>- Sanctioned addresses<br/>- Darknet markets]
     end
     
     subgraph "🚨 Risk Indicators"
@@ -552,7 +552,7 @@ graph TB
     
     subgraph "🧮 Crypto Risk Engine"
         BASE_RISK[Base Crypto Risk]
-        MULTIPLIERS[Risk Multipliers<br/>• Cross-chain swaps<br/>• Multiple hops<br/>• Timing patterns]
+        MULTIPLIERS[Risk Multipliers<br/>- Cross-chain swaps<br/>- Multiple hops<br/>- Timing patterns]
         FINAL_SCORE[Final Crypto Score<br/>0-100 Scale]
     end
     
@@ -1077,26 +1077,26 @@ This advanced pipeline combines multiple AI techniques for maximum detection acc
 graph TB
     subgraph "🤖 Enhanced AI Pipeline"
         subgraph "📊 Data Preprocessing"
-            FEATURES[Feature Engineering<br/>• Time-series features<br/>• Graph features<br/>• Behavioral embeddings]
-            AUGMENT[Data Augmentation<br/>• Synthetic transactions<br/>• SMOTE for rare cases<br/>• Privacy-preserving generation]
+                    FEATURES[Feature Engineering<br/>- Time-series features<br/>- Graph features<br/>- Behavioral embeddings]
+        AUGMENT[Data Augmentation<br/>- Synthetic transactions<br/>- SMOTE for rare cases<br/>- Privacy-preserving generation]
         end
         
         subgraph "🧠 ML Models"
-            ENSEMBLE[Ensemble Models<br/>• XGBoost<br/>• Random Forest<br/>• Deep Learning]
-            GRAPH[Graph Neural Networks<br/>• Transaction networks<br/>• Entity relationships<br/>• Suspicious clusters]
-            ANOMALY[Anomaly Detection<br/>• Isolation Forest<br/>• One-Class SVM<br/>• Autoencoders]
-            TIME[Time Series Models<br/>• LSTM/GRU<br/>• Prophet<br/>• Seasonal patterns]
+            ENSEMBLE[Ensemble Models<br/>- XGBoost<br/>- Random Forest<br/>- Deep Learning]
+            GRAPH[Graph Neural Networks<br/>- Transaction networks<br/>- Entity relationships<br/>- Suspicious clusters]
+            ANOMALY[Anomaly Detection<br/>- Isolation Forest<br/>- One-Class SVM<br/>- Autoencoders]
+            TIME[Time Series Models<br/>- LSTM/GRU<br/>- Prophet<br/>- Seasonal patterns]
         end
         
         subgraph "🎯 Advanced Techniques"
-            ACTIVE[Active Learning<br/>• Uncertainty sampling<br/>• Query by committee<br/>• Human feedback loop]
-            FEDERATED[Federated Learning<br/>• Multi-bank training<br/>• Privacy preservation<br/>• Shared intelligence]
-            EXPLAINABLE[Enhanced XAI<br/>• SHAP values<br/>• LIME explanations<br/>• Counterfactuals]
+            ACTIVE[Active Learning<br/>- Uncertainty sampling<br/>- Query by committee<br/>- Human feedback loop]
+            FEDERATED[Federated Learning<br/>- Multi-bank training<br/>- Privacy preservation<br/>- Shared intelligence]
+            EXPLAINABLE[Enhanced XAI<br/>- SHAP values<br/>- LIME explanations<br/>- Counterfactuals]
         end
         
         subgraph "🔄 Continuous Learning"
-            DRIFT[Concept Drift Detection<br/>• Statistical tests<br/>• Performance monitoring<br/>• Automated retraining]
-            ONLINE[Online Learning<br/>• Incremental updates<br/>• Real-time adaptation<br/>• A/B testing]
+            DRIFT[Concept Drift Detection<br/>- Statistical tests<br/>- Performance monitoring<br/>- Automated retraining]
+            ONLINE[Online Learning<br/>- Incremental updates<br/>- Real-time adaptation<br/>- A/B testing]
         end
     end
     
@@ -1163,7 +1163,7 @@ graph TB
     end
     
     subgraph "🎯 Decision Logic"
-        THRESHOLD_CHECK{Risk ≥ 45?}
+        THRESHOLD_CHECK{Risk >= 45?}
         ALERT[Generate Alert]
         ESCALATE[Escalate to Review]
         MONITOR[Enhanced Monitoring]
@@ -1306,25 +1306,25 @@ Comprehensive analytics platform providing real-time insights, predictive analyt
 graph LR
     subgraph "📊 Advanced Analytics Suite"
         subgraph "🎯 Real-time Dashboards"
-            EXEC[Executive Dashboard<br/>• Risk KPIs<br/>• ROI metrics<br/>• Compliance status]
-            OPS[Operations Center<br/>• Live alerts<br/>• Queue management<br/>• Performance metrics]
-            ANALYST[Analyst Workbench<br/>• Case management<br/>• Investigation tools<br/>• Evidence collection]
+            EXEC[Executive Dashboard<br/>- Risk KPIs<br/>- ROI metrics<br/>- Compliance status]
+            OPS[Operations Center<br/>- Live alerts<br/>- Queue management<br/>- Performance metrics]
+            ANALYST[Analyst Workbench<br/>- Case management<br/>- Investigation tools<br/>- Evidence collection]
         end
         
         subgraph "📈 Predictive Analytics"
-            FORECAST[Risk Forecasting<br/>• Volume prediction<br/>• Seasonal patterns<br/>• Regulatory changes]
-            NETWORK[Network Analysis<br/>• Entity relationships<br/>• Community detection<br/>• Risk propagation]
-            BEHAVIORAL[Behavioral Profiling<br/>• Customer clustering<br/>• Deviation detection<br/>• Lifecycle analysis]
+            FORECAST[Risk Forecasting<br/>- Volume prediction<br/>- Seasonal patterns<br/>- Regulatory changes]
+            NETWORK[Network Analysis<br/>- Entity relationships<br/>- Community detection<br/>- Risk propagation]
+            BEHAVIORAL[Behavioral Profiling<br/>- Customer clustering<br/>- Deviation detection<br/>- Lifecycle analysis]
         end
         
         subgraph "🧪 A/B Testing Platform"
-            EXPERIMENTS[Model Experiments<br/>• Champion/Challenger<br/>• Performance comparison<br/>• Statistical significance]
-            ROLLOUT[Gradual Rollout<br/>• Canary deployment<br/>• Risk mitigation<br/>• Rollback capability]
+            EXPERIMENTS[Model Experiments<br/>- Champion/Challenger<br/>- Performance comparison<br/>- Statistical significance]
+            ROLLOUT[Gradual Rollout<br/>- Canary deployment<br/>- Risk mitigation<br/>- Rollback capability]
         end
         
         subgraph "📋 Regulatory Reporting"
-            AUTO_SAR[Automated SAR Generation<br/>• Template-based<br/>• Regulatory compliance<br/>• Multi-jurisdiction]
-            AUDIT[Audit Trail Analytics<br/>• Decision tracking<br/>• Model explanations<br/>• Compliance verification]
+            AUTO_SAR[Automated SAR Generation<br/>- Template-based<br/>- Regulatory compliance<br/>- Multi-jurisdiction]
+            AUDIT[Audit Trail Analytics<br/>- Decision tracking<br/>- Model explanations<br/>- Compliance verification]
         end
     end
     
@@ -1354,26 +1354,26 @@ Complete observability solution with intelligent alerting, distributed tracing, 
 graph TB
     subgraph "👁️ Complete Observability Stack"
         subgraph "📊 Metrics & Monitoring"
-            PROMETHEUS[Prometheus<br/>• Custom metrics<br/>• Alerting rules<br/>• Long-term storage]
-            GRAFANA[Grafana<br/>• Beautiful dashboards<br/>• Alerting<br/>• Annotations]
-            DATADOG[DataDog/New Relic<br/>• APM<br/>• Infrastructure<br/>• Synthetics]
+            PROMETHEUS[Prometheus<br/>- Custom metrics<br/>- Alerting rules<br/>- Long-term storage]
+            GRAFANA[Grafana<br/>- Beautiful dashboards<br/>- Alerting<br/>- Annotations]
+            DATADOG[DataDog/New Relic<br/>- APM<br/>- Infrastructure<br/>- Synthetics]
         end
         
         subgraph "📝 Logging & Tracing"
-            ELK[ELK Stack<br/>• Elasticsearch<br/>• Logstash<br/>• Kibana]
-            JAEGER[Jaeger<br/>• Distributed tracing<br/>• Performance analysis<br/>• Dependency mapping]
-            OPENTEL[OpenTelemetry<br/>• Vendor-agnostic<br/>• Auto-instrumentation<br/>• Unified observability]
+            ELK[ELK Stack<br/>- Elasticsearch<br/>- Logstash<br/>- Kibana]
+            JAEGER[Jaeger<br/>- Distributed tracing<br/>- Performance analysis<br/>- Dependency mapping]
+            OPENTEL[OpenTelemetry<br/>- Vendor-agnostic<br/>- Auto-instrumentation<br/>- Unified observability]
         end
         
         subgraph "🚨 Intelligent Alerting"
-            AIOPS[AIOps Platform<br/>• Anomaly detection<br/>• Alert correlation<br/>• Root cause analysis]
-            RUNBOOK[Automated Runbooks<br/>• Self-healing<br/>• Incident response<br/>• Escalation paths]
-            ONCALL[On-Call Management<br/>• PagerDuty integration<br/>• Schedule rotation<br/>• SLA tracking]
+            AIOPS[AIOps Platform<br/>- Anomaly detection<br/>- Alert correlation<br/>- Root cause analysis]
+            RUNBOOK[Automated Runbooks<br/>- Self-healing<br/>- Incident response<br/>- Escalation paths]
+            ONCALL[On-Call Management<br/>- PagerDuty integration<br/>- Schedule rotation<br/>- SLA tracking]
         end
         
         subgraph "🎭 Chaos Engineering"
-            CHAOS[Chaos Monkey<br/>• Fault injection<br/>• Resilience testing<br/>• Failure scenarios]
-            LOAD[Load Testing<br/>• Performance testing<br/>• Capacity planning<br/>• Stress testing]
+            CHAOS[Chaos Monkey<br/>- Fault injection<br/>- Resilience testing<br/>- Failure scenarios]
+            LOAD[Load Testing<br/>- Performance testing<br/>- Capacity planning<br/>- Stress testing]
         end
     end
     
@@ -1514,27 +1514,27 @@ Comprehensive integration platform connecting with core banking systems, externa
 graph TB
     subgraph "🏢 Enterprise Integration Hub"
         subgraph "🏛️ Core Banking Systems"
-            CBS[Core Banking<br/>• Real-time transaction feeds<br/>• Customer data sync<br/>• Account information]
-            SWIFT[SWIFT Network<br/>• Cross-border payments<br/>• MT messages<br/>• Sanctions screening]
-            CARD[Card Networks<br/>• Visa/Mastercard<br/>• Real-time authorization<br/>• Merchant data]
+            CBS[Core Banking<br/>- Real-time transaction feeds<br/>- Customer data sync<br/>- Account information]
+            SWIFT[SWIFT Network<br/>- Cross-border payments<br/>- MT messages<br/>- Sanctions screening]
+            CARD[Card Networks<br/>- Visa/Mastercard<br/>- Real-time authorization<br/>- Merchant data]
         end
         
         subgraph "📊 Data Sources"
-            EXTERNAL[External Data<br/>• Credit bureaus<br/>• KYC providers<br/>• Sanctions lists<br/>• PEP databases]
-            NEWS[News & Media<br/>• Adverse media<br/>• Social media<br/>• Public records]
-            BLOCKCHAIN[Blockchain APIs<br/>• Multiple chains<br/>• Wallet clustering<br/>• Exchange data]
+            EXTERNAL[External Data<br/>- Credit bureaus<br/>- KYC providers<br/>- Sanctions lists<br/>- PEP databases]
+            NEWS[News & Media<br/>- Adverse media<br/>- Social media<br/>- Public records]
+            BLOCKCHAIN[Blockchain APIs<br/>- Multiple chains<br/>- Wallet clustering<br/>- Exchange data]
         end
         
         subgraph "🔗 API Gateway"
-            REST[REST APIs<br/>• RESTful endpoints<br/>• OpenAPI specs<br/>• Rate limiting]
-            GRAPHQL[GraphQL<br/>• Flexible queries<br/>• Real-time subscriptions<br/>• Schema federation]
-            WEBHOOK[Webhooks<br/>• Event-driven<br/>• Retry logic<br/>• Authentication]
+            REST[REST APIs<br/>- RESTful endpoints<br/>- OpenAPI specs<br/>- Rate limiting]
+            GRAPHQL[GraphQL<br/>- Flexible queries<br/>- Real-time subscriptions<br/>- Schema federation]
+            WEBHOOK[Webhooks<br/>- Event-driven<br/>- Retry logic<br/>- Authentication]
         end
         
         subgraph "🎭 Legacy Integration"
-            MAINFRAME[Mainframe<br/>• COBOL systems<br/>• Batch processing<br/>• File transfers]
-            ETL[ETL Pipelines<br/>• Data transformation<br/>• Scheduling<br/>• Error handling]
-            MESSAGE[Message Queues<br/>• IBM MQ<br/>• RabbitMQ<br/>• Apache ActiveMQ]
+            MAINFRAME[Mainframe<br/>- COBOL systems<br/>- Batch processing<br/>- File transfers]
+            ETL[ETL Pipelines<br/>- Data transformation<br/>- Scheduling<br/>- Error handling]
+            MESSAGE[Message Queues<br/>- IBM MQ<br/>- RabbitMQ<br/>- Apache ActiveMQ]
         end
     end
     
