@@ -21,7 +21,7 @@ A state-of-the-art Anti-Money Laundering (AML) detection system that leverages *
         DOC[Documents]
     end
     
-    subgraph "🔮 Ambient AML System"
+    subgraph " Ambient AML System"
         subgraph " Event Ingestion Layer"
             STREAM[Real-time Streams]
             EVENTS[External Events]
@@ -63,7 +63,7 @@ A state-of-the-art Anti-Money Laundering (AML) detection system that leverages *
         WATCH[CloudWatch]
     end
     
-    subgraph "👥 Human Oversight"
+    subgraph " Human Oversight"
         ANALYST[Compliance Analysts]
         REVIEW[Review Queue]
         REGULATOR[Regulatory Reports]
