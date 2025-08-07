@@ -182,6 +182,112 @@ Our system implements the **Seven Principles of Ambient Intelligence** to create
 
 The system uses **LangGraph** to orchestrate a sophisticated multi-agent workflow that adapts based on transaction characteristics and risk factors.
 
+```mermaid
+graph TB
+    subgraph "🏦 Financial Institution"
+        TX[Transaction Data]
+        CUST[Customer Data] 
+        DOC[Documents]
+    end
+    
+    subgraph "🧠 Ambient AML System"
+        subgraph "📡 Event Ingestion Layer"
+            STREAM[Real-time Streams]
+            EVENTS[External Events]
+            USER[User Interactions]
+        end
+        
+        subgraph "🎭 Multi-Agent Orchestration"
+            ORCH[Master Orchestrator]
+            SANC[Sanctions Agent]
+            PEP[PEP Agent]
+            GEO[Geographic Agent]
+            BEH[Behavioral Agent]
+            CRYPTO[Crypto Agent]
+            DOC_AGENT[Document Agent]
+            EDD[Enhanced DD Agent]
+        end
+        
+        subgraph "🧠 Ambient Intelligence Core"
+            PERC[Continuous Perception]
+            MEM[Memory & Context]
+            REASON[Semantic Reasoning]
+            LEARN[Goal-Oriented Learning]
+        end
+        
+        subgraph "⚖️ Action Layer"
+            DECISION[Risk Assessment]
+            SAR[SAR Filing]
+            ALERT[Alert Generation]
+            CONTROL[Transaction Control]
+        end
+        
+        subgraph "👤 Human Interface"
+            ANALYST[Compliance Analyst]
+            REVIEW[Case Review]
+            REGULATOR[Regulatory Reporting]
+        end
+    end
+    
+    subgraph "☁️ AWS Infrastructure"
+        BEDROCK[Amazon Bedrock<br/>LLM Processing]
+        LAMBDA[AWS Lambda<br/>Agent Execution]
+        DYNAMO[DynamoDB<br/>State & Memory]
+        BRIDGE[EventBridge<br/>Event Routing]
+        STEP[Step Functions<br/>Workflow Control]
+        WATCH[CloudWatch<br/>Monitoring]
+    end
+    
+    TX --> STREAM
+    CUST --> STREAM
+    DOC --> EVENTS
+    
+    STREAM --> ORCH
+    EVENTS --> ORCH
+    USER --> ORCH
+    
+    ORCH --> SANC
+    ORCH --> PEP
+    ORCH --> GEO
+    ORCH --> BEH
+    ORCH --> CRYPTO
+    ORCH --> DOC_AGENT
+    ORCH --> EDD
+    
+    SANC --> REASON
+    PEP --> REASON
+    GEO --> PERC
+    BEH --> MEM
+    CRYPTO --> REASON
+    DOC_AGENT --> REASON
+    EDD --> LEARN
+    
+    PERC --> DECISION
+    MEM --> DECISION
+    REASON --> DECISION
+    LEARN --> DECISION
+    
+    DECISION --> SAR
+    DECISION --> ALERT
+    DECISION --> CONTROL
+    
+    SAR --> ANALYST
+    ALERT --> REVIEW
+    CONTROL --> REGULATOR
+    
+    BEDROCK --> REASON
+    LAMBDA --> ORCH
+    DYNAMO --> MEM
+    BRIDGE --> PERC
+    STEP --> DECISION
+    WATCH --> LEARN
+    
+    style ORCH fill:#ff9999
+    style REASON fill:#99ccff
+    style DECISION fill:#99ff99
+    style BEDROCK fill:#ffcc99
+```
+
 ### **🎭 Specialized Agent Capabilities**
 
 | Agent | Focus Area | Key Functions |
@@ -198,6 +304,98 @@ The system uses **LangGraph** to orchestrate a sophisticated multi-agent workflo
 ## ☁️ **AWS Cloud Architecture**
 
 Built for enterprise scale with a comprehensive AWS cloud-native architecture leveraging serverless and managed services for optimal performance and cost efficiency.
+
+```mermaid
+graph TB
+    subgraph "🌐 AWS Cloud Infrastructure"
+        subgraph "🚪 API Gateway Layer"
+            API[API Gateway<br/>Rate Limiting & Auth]
+            ALB[Application Load Balancer<br/>Multi-AZ Distribution]
+        end
+        
+        subgraph "⚡ Compute Layer"
+            LAMBDA[AWS Lambda<br/>Agent Execution]
+            FARGATE[AWS Fargate<br/>Containerized Services]
+            EC2[EC2 Auto Scaling<br/>High-Volume Processing]
+        end
+        
+        subgraph "🧠 AI/ML Services"
+            BEDROCK[Amazon Bedrock<br/>LLM Processing]
+            COMPREHEND[Amazon Comprehend<br/>NLP Analysis]
+            SAGEMAKER[Amazon SageMaker<br/>Custom ML Models]
+        end
+        
+        subgraph "💾 Data Layer"
+            DYNAMO[DynamoDB<br/>NoSQL Transaction Data]
+            RDS[RDS Aurora<br/>Relational Analytics]
+            S3[S3 Data Lake<br/>Document Storage]
+            REDIS[ElastiCache Redis<br/>Real-time Caching]
+        end
+        
+        subgraph "📡 Event Processing"
+            KINESIS[Amazon Kinesis<br/>Real-time Streams]
+            EVENTBRIDGE[EventBridge<br/>Event Routing]
+            SQS[Amazon SQS<br/>Message Queuing]
+            SNS[Amazon SNS<br/>Notifications]
+        end
+        
+        subgraph "🔄 Orchestration"
+            STEP[Step Functions<br/>Workflow Management]
+            BATCH[AWS Batch<br/>Large-scale Processing]
+        end
+        
+        subgraph "📊 Monitoring & Logging"
+            CLOUDWATCH[CloudWatch<br/>Metrics & Logs]
+            XRAY[X-Ray<br/>Distributed Tracing]
+            CLOUDTRAIL[CloudTrail<br/>Audit Logging]
+        end
+        
+        subgraph "🔐 Security & Compliance"
+            IAM[AWS IAM<br/>Access Control]
+            KMS[AWS KMS<br/>Encryption]
+            SECRETS[Secrets Manager<br/>Credential Management]
+            WAF[AWS WAF<br/>Web Application Firewall]
+        end
+    end
+    
+    API --> LAMBDA
+    ALB --> FARGATE
+    
+    LAMBDA --> BEDROCK
+    LAMBDA --> DYNAMO
+    LAMBDA --> KINESIS
+    
+    FARGATE --> COMPREHEND
+    FARGATE --> RDS
+    FARGATE --> S3
+    
+    KINESIS --> EVENTBRIDGE
+    EVENTBRIDGE --> SQS
+    SQS --> LAMBDA
+    
+    STEP --> LAMBDA
+    STEP --> BATCH
+    
+    BEDROCK --> SAGEMAKER
+    DYNAMO --> REDIS
+    
+    LAMBDA --> CLOUDWATCH
+    FARGATE --> XRAY
+    
+    IAM --> LAMBDA
+    KMS --> DYNAMO
+    SECRETS --> LAMBDA
+    WAF --> API
+    
+    SNS --> CLOUDWATCH
+    CLOUDTRAIL --> S3
+    
+    style BEDROCK fill:#ff9999
+    style LAMBDA fill:#99ccff
+    style DYNAMO fill:#99ff99
+    style KINESIS fill:#ffcc99
+    style STEP fill:#ff99cc
+```
 
 ### **🔧 Technology Stack**
 
@@ -223,6 +421,95 @@ Built for enterprise scale with a comprehensive AWS cloud-native architecture le
 
 Our advanced risk scoring engine combines multiple risk factors with weighted algorithms to produce accurate, explainable risk assessments.
 
+```mermaid
+graph TB
+    subgraph "📊 Risk Input Sources"
+        SANCTIONS[Sanctions Screening<br/>OFAC, UN, EU Lists]
+        PEP[PEP Detection<br/>Political Exposure]
+        CRYPTO[Crypto Analysis<br/>Blockchain Intelligence]
+        GEO[Geographic Risk<br/>Jurisdiction Analysis]
+        DOC[Document Analysis<br/>Trade-Based ML]
+        BEHAVIORAL[Behavioral Patterns<br/>Transaction Analysis]
+    end
+    
+    subgraph "⚖️ Weighted Risk Engine"
+        SANC_WEIGHT[Sanctions: 40%]
+        PEP_WEIGHT[PEP Status: 35%]
+        CRYPTO_WEIGHT[Crypto Risks: 25%]
+        GEO_WEIGHT[Geographic: 20%]
+        DOC_WEIGHT[Documents: 15%]
+        BEH_WEIGHT[Behavioral: 10%]
+    end
+    
+    subgraph "🧮 Risk Calculation"
+        FORMULA[Weighted Sum Algorithm<br/>Σ(Risk_Factor × Weight)]
+        NORMALIZE[Score Normalization<br/>0-100 Scale]
+        CONFIDENCE[Confidence Scoring<br/>Statistical Validation]
+    end
+    
+    subgraph "📈 Risk Classification"
+        CRITICAL[Critical Risk<br/>Score: 85-100<br/>Immediate Action]
+        HIGH[High Risk<br/>Score: 60-84<br/>Enhanced Review]
+        MEDIUM[Medium Risk<br/>Score: 30-59<br/>Standard Review]
+        LOW[Low Risk<br/>Score: 0-29<br/>Automated Approval]
+    end
+    
+    subgraph "🎯 Decision Logic"
+        AUTO_BLOCK{Score ≥ 85?}
+        HUMAN_REVIEW{Score ≥ 60?}
+        ENHANCED_MON{Score ≥ 30?}
+        AUTO_APPROVE[Auto Approve]
+    end
+    
+    subgraph "📋 Actions & Outcomes"
+        BLOCK[Block Transaction]
+        SAR[Generate SAR]
+        INVESTIGATE[Human Investigation]
+        MONITOR[Enhanced Monitoring]
+        APPROVE[Approve Transaction]
+    end
+    
+    SANCTIONS --> SANC_WEIGHT
+    PEP --> PEP_WEIGHT
+    CRYPTO --> CRYPTO_WEIGHT
+    GEO --> GEO_WEIGHT
+    DOC --> DOC_WEIGHT
+    BEHAVIORAL --> BEH_WEIGHT
+    
+    SANC_WEIGHT --> FORMULA
+    PEP_WEIGHT --> FORMULA
+    CRYPTO_WEIGHT --> FORMULA
+    GEO_WEIGHT --> FORMULA
+    DOC_WEIGHT --> FORMULA
+    BEH_WEIGHT --> FORMULA
+    
+    FORMULA --> NORMALIZE
+    NORMALIZE --> CONFIDENCE
+    
+    CONFIDENCE --> CRITICAL
+    CONFIDENCE --> HIGH
+    CONFIDENCE --> MEDIUM
+    CONFIDENCE --> LOW
+    
+    CRITICAL --> AUTO_BLOCK
+    HIGH --> HUMAN_REVIEW
+    MEDIUM --> ENHANCED_MON
+    LOW --> AUTO_APPROVE
+    
+    AUTO_BLOCK -->|Yes| BLOCK
+    AUTO_BLOCK -->|SAR Required| SAR
+    HUMAN_REVIEW -->|Yes| INVESTIGATE
+    ENHANCED_MON -->|Yes| MONITOR
+    AUTO_APPROVE --> APPROVE
+    
+    style CRITICAL fill:#ff5252
+    style HIGH fill:#ff9800
+    style MEDIUM fill:#ffc107
+    style LOW fill:#4caf50
+    style BLOCK fill:#f44336
+    style SAR fill:#e91e63
+```
+
 ### **⚡ Risk Factor Weights**
 
 | Risk Category | Weight | Description | Examples |
@@ -237,6 +524,88 @@ Our advanced risk scoring engine combines multiple risk factors with weighted al
 ## 🔬 **Cryptocurrency Analysis Engine**
 
 Advanced blockchain analysis capabilities for detecting cryptocurrency-based money laundering activities with real-time risk assessment.
+
+```mermaid
+graph TB
+    subgraph "₿ Blockchain Data Sources"
+        BITCOIN[Bitcoin Network<br/>Transaction Data]
+        ETHEREUM[Ethereum Network<br/>Smart Contracts]
+        ALTCOINS[Other Blockchains<br/>Litecoin, BCH, etc.]
+        EXCHANGES[Exchange APIs<br/>Trading Data]
+    end
+    
+    subgraph "🔍 Analysis Components"
+        WALLET[Wallet Analysis<br/>• Address clustering<br/>• Ownership attribution<br/>• Balance tracking]
+        CHAIN[Chain Analysis<br/>• Transaction tracing<br/>• Flow analysis<br/>• Path finding]
+        PATTERN[Pattern Detection<br/>• Mixing patterns<br/>• Layering schemes<br/>• Integration methods]
+        INTEL[Threat Intelligence<br/>• Known bad actors<br/>• Sanctioned addresses<br/>• Darknet markets]
+    end
+    
+    subgraph "🚨 Risk Indicators"
+        MIXER[Mixer Usage<br/>CoinJoin, Tornado Cash<br/>Risk Score: +30]
+        PRIVACY[Privacy Coins<br/>Monero, Zcash<br/>Risk Score: +25]
+        NEW_WALLET[New Wallets<br/>Age < 30 days<br/>Risk Score: +20]
+        DARKNET[Darknet Markets<br/>Silk Road, AlphaBay<br/>Risk Score: +40]
+        EXCHANGE[Unknown Exchanges<br/>Unregulated platforms<br/>Risk Score: +15]
+        VOLUME[High Volume<br/>> $100K transactions<br/>Risk Score: +10]
+    end
+    
+    subgraph "🧮 Crypto Risk Engine"
+        BASE_RISK[Base Crypto Risk]
+        MULTIPLIERS[Risk Multipliers<br/>• Cross-chain swaps<br/>• Multiple hops<br/>• Timing patterns]
+        FINAL_SCORE[Final Crypto Score<br/>0-100 Scale]
+    end
+    
+    subgraph "📊 Real-time Monitoring"
+        MEMPOOL[Mempool Monitoring<br/>Pending Transactions]
+        ALERTS[Real-time Alerts<br/>Suspicious Activity]
+        TRACKING[Address Tracking<br/>Watchlist Monitoring]
+        REPORTS[Automated Reports<br/>SAR Generation]
+    end
+    
+    subgraph "🎯 Response Actions"
+        FREEZE[Freeze Transaction]
+        INVESTIGATE[Manual Investigation]
+        ESCALATE[Regulatory Escalation]
+        APPROVE[Conditional Approval]
+    end
+    
+    BITCOIN --> WALLET
+    ETHEREUM --> CHAIN
+    ALTCOINS --> PATTERN
+    EXCHANGES --> INTEL
+    
+    WALLET --> MIXER
+    CHAIN --> PRIVACY
+    PATTERN --> NEW_WALLET
+    INTEL --> DARKNET
+    
+    MIXER --> BASE_RISK
+    PRIVACY --> BASE_RISK
+    NEW_WALLET --> BASE_RISK
+    DARKNET --> BASE_RISK
+    EXCHANGE --> BASE_RISK
+    VOLUME --> BASE_RISK
+    
+    BASE_RISK --> MULTIPLIERS
+    MULTIPLIERS --> FINAL_SCORE
+    
+    FINAL_SCORE --> MEMPOOL
+    FINAL_SCORE --> ALERTS
+    FINAL_SCORE --> TRACKING
+    ALERTS --> REPORTS
+    
+    FINAL_SCORE --> FREEZE
+    FINAL_SCORE --> INVESTIGATE
+    FINAL_SCORE --> ESCALATE
+    FINAL_SCORE --> APPROVE
+    
+    style MIXER fill:#ff5252
+    style DARKNET fill:#d32f2f
+    style PRIVACY fill:#ff9800
+    style FREEZE fill:#f44336
+    style FINAL_SCORE fill:#2196f3
+```
 
 ## 🚀 **Quick Start Guide**
 
