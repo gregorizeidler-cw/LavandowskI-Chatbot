@@ -113,9 +113,9 @@ graph TB
     WATCH --> LEARN
     
     style ORCH fill:#ff9999
-    style REASON fill:#99ccff
-    style DECISION fill:#99ff99
-    style BEDROCK fill:#ffcc99
+    style REASON fill:#3f8fbf
+    style DECISION fill:#2e7d2e
+    style BEDROCK fill:#e6a533
 ```
 
 ## 🔬 **Ambient Intelligence Architecture**
@@ -283,9 +283,9 @@ graph TB
     WATCH --> LEARN
     
     style ORCH fill:#ff9999
-    style REASON fill:#99ccff
-    style DECISION fill:#99ff99
-    style BEDROCK fill:#ffcc99
+    style REASON fill:#3f8fbf
+    style DECISION fill:#2e7d2e
+    style BEDROCK fill:#e6a533
 ```
 
 ### **🎭 Specialized Agent Capabilities**
@@ -391,10 +391,10 @@ graph TB
     CLOUDTRAIL --> S3
     
     style BEDROCK fill:#ff9999
-    style LAMBDA fill:#99ccff
-    style DYNAMO fill:#99ff99
-    style KINESIS fill:#ffcc99
-    style STEP fill:#ff99cc
+    style LAMBDA fill:#3f8fbf
+    style DYNAMO fill:#2e7d2e
+    style KINESIS fill:#e6a533
+    style STEP fill:#d1477a
 ```
 
 ### **🔧 Technology Stack**
@@ -1114,9 +1114,9 @@ graph TB
     EXPLAINABLE --> ONLINE
     
     style GRAPH fill:#ff6b6b
-    style FEDERATED fill:#4ecdc4
+    style FEDERATED fill:#2a9d8f
     style EXPLAINABLE fill:#45b7d1
-    style ONLINE fill:#96ceb4
+    style ONLINE fill:#5a9e8a
 ```
 
 ### **🕸️ Graph Neural Network Architecture**
@@ -1341,9 +1341,9 @@ graph LR
     AUTO_SAR --> AUDIT
     
     style NETWORK fill:#ff9999
-    style EXPERIMENTS fill:#99ccff
-    style AUTO_SAR fill:#99ff99
-    style AUDIT fill:#ffcc99
+    style EXPERIMENTS fill:#3f8fbf
+    style AUTO_SAR fill:#2e7d2e
+    style AUDIT fill:#e6a533
 ```
 
 ### **👁️ 360° Observability & Monitoring Stack**
@@ -1500,10 +1500,10 @@ graph TB
     CONFIG --> PROD_CLOUDWATCH
     
     style PROD_BEDROCK fill:#ff9999
-    style PROD_LAMBDA fill:#99ccff
-    style PROD_DYNAMO fill:#99ff99
-    style PROD_CLOUDWATCH fill:#ffcc99
-    style TERRAFORM fill:#e1bee7
+    style PROD_LAMBDA fill:#3f8fbf
+    style PROD_DYNAMO fill:#2e7d2e
+    style PROD_CLOUDWATCH fill:#e6a533
+    style TERRAFORM fill:#9c5aa3
 ```
 
 ### **🏢 Enterprise Integration Hub**
@@ -1550,7 +1550,7 @@ graph TB
     GRAPHQL --> ETL
     WEBHOOK --> MESSAGE
     
-    style CBS fill:#e1f5fe
+    style CBS fill:#64b5f6
     style BLOCKCHAIN fill:#ff9800
     style REST fill:#4caf50
     style MAINFRAME fill:#9c27b0
