@@ -12,23 +12,22 @@ A state-of-the-art Anti-Money Laundering (AML) detection system that leverages *
 
 ## 🌟 **System Overview**
 
-<function_calls>
-<invoke name="create_diagram">
-<parameter name="content">graph TB
-    subgraph " Financial Institution"
+```mermaid
+graph TB
+    subgraph "Financial Institution"
         TX[Transaction Data]
         CUST[Customer Data]
         DOC[Documents]
     end
     
-    subgraph " Ambient AML System"
-        subgraph " Event Ingestion Layer"
+    subgraph "Ambient AML System"
+        subgraph "Event Ingestion Layer"
             STREAM[Real-time Streams]
             EVENTS[External Events]
             USER[User Interactions]
         end
         
-        subgraph " Multi-Agent Orchestration"
+        subgraph "Multi-Agent Orchestration"
             ORCH[Master Orchestrator]
             SANC[Sanctions Agent]
             PEP[PEP Agent]
@@ -39,14 +38,14 @@ A state-of-the-art Anti-Money Laundering (AML) detection system that leverages *
             EDD[Enhanced DD Agent]
         end
         
-        subgraph " Ambient Intelligence Core"
+        subgraph "Ambient Intelligence Core"
             PERC[Continuous Perception]
-            MEM[Memory & Context]
+            MEM[Memory and Context]
             REASON[Semantic Reasoning]
             LEARN[Goal-Oriented Learning]
         end
         
-        subgraph " Action Layer"
+        subgraph "Action Layer"
             DECISION[Risk Assessment]
             SAR[SAR Generation]
             ALERT[Alert System]
@@ -54,7 +53,7 @@ A state-of-the-art Anti-Money Laundering (AML) detection system that leverages *
         end
     end
     
-    subgraph " AWS Cloud Services"
+    subgraph "AWS Cloud Services"
         BEDROCK[Amazon Bedrock]
         LAMBDA[AWS Lambda]
         DYNAMO[DynamoDB]
@@ -63,7 +62,7 @@ A state-of-the-art Anti-Money Laundering (AML) detection system that leverages *
         WATCH[CloudWatch]
     end
     
-    subgraph " Human Oversight"
+    subgraph "Human Oversight"
         ANALYST[Compliance Analysts]
         REVIEW[Review Queue]
         REGULATOR[Regulatory Reports]
@@ -117,6 +116,7 @@ A state-of-the-art Anti-Money Laundering (AML) detection system that leverages *
     style REASON fill:#99ccff
     style DECISION fill:#99ff99
     style BEDROCK fill:#ffcc99
+```
 
 ## 🔬 **Ambient Intelligence Architecture**
 
@@ -307,7 +307,7 @@ Built for enterprise scale with a comprehensive AWS cloud-native architecture le
 
 ```mermaid
 graph TB
-    subgraph " AWS Cloud Infrastructure"
+    subgraph "AWS Cloud Infrastructure"
         subgraph "API Gateway Layer"
             API[API Gateway<br/>Rate Limiting & Auth]
             ALB[Application Load Balancer<br/>Multi-AZ Distribution]
@@ -1415,7 +1415,7 @@ graph TB
             STAGE_BEDROCK[Bedrock Access<br/>Limited Quota]
         end
         
-        subgraph "🏭 Production Environment"
+        subgraph "Production Environment"
             subgraph " Global Infrastructure"
                 PROD_CLOUDFRONT[CloudFront CDN<br/>Global Edge Locations]
                 PROD_ALB[Application Load Balancer<br/>Multi-AZ]
@@ -1457,7 +1457,7 @@ graph TB
         TERRAFORM[Terraform<br/>Infrastructure as Code]
     end
     
-    subgraph "🔐 Security & Compliance"
+    subgraph "Security and Compliance"
         VAULT[AWS Secrets Manager<br/>Credential Storage]
         KMS[AWS KMS<br/>Encryption Keys]
         CLOUDTRAIL[CloudTrail<br/>Audit Logging]
